@@ -14,13 +14,13 @@ jobs:
 
     - name: install golang
       run: 
-        apt install golang
+        sudo apt install golang
 
     - name: install e2e utils
       run: 
-        go get -u github.com/onsi/ginkgo/ginkgo
-        go get -u github.com/onsi/gomega/...
+        sudo go get -u github.com/onsi/ginkgo/ginkgo
+        sudo go get -u github.com/onsi/gomega/...
   
     - name: start test
       run:
-        make test-e2e-node PARALLELISM=1 FOCUS=Sysctls
+        sudo make test-e2e-node PARALLELISM=1 FOCUS=Sysctls
